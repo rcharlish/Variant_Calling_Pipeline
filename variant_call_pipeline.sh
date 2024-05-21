@@ -21,6 +21,7 @@ do
 	# Run fastp
  	fastp -w 5 -a AGATCGGAAGAGC -i "${reads}/${sample}_1_subset.fastq.gz" -I "${reads}/${sample}_2_subset.fastq.gz" \
  	-o "${trimming}/${sample}_trimmed_r1.fastq.gz" -O "${trimming}/${sample}_trimmed_r2.fastq.gz" \
+  	--qualified_quality_phred 30 --unqualified_percent_limit 0 \
  	--html "${trimming}/${sample}_fastp.html" --json "${trimming}/${sample}_fastp.json"     
 done
 
